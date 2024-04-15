@@ -5,11 +5,11 @@
   "source": "./src/index.ts",
   "main": "./dist/index.js",
   "module": "./dist/module.js",
-  "types": "./dist/types.d.ts",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "parcel build",
+    "build": "parcel build && tar -cvzf build.tgz dist",
     "start": "next start",
     "lint": "next lint"
   },
