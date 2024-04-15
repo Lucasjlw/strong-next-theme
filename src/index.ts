@@ -1,8 +1,8 @@
+import { ThemeProvider, useThemeContext } from "./context";
+
 import { cookies } from "next/headers";
 
-export async function generateThemeMetadata(themeColors: {
-  [key: string]: string;
-}) {
+async function generateThemeMetadata(themeColors: { [key: string]: string }) {
   const theme = cookies().get("customTheme")?.value;
 
   return {
@@ -12,7 +12,7 @@ export async function generateThemeMetadata(themeColors: {
   };
 }
 
-export async function getHTMLProps() {
+async function getHTMLProps() {
   const theme = cookies().get("customTheme")?.value;
 
   return {
@@ -20,4 +20,9 @@ export async function getHTMLProps() {
   };
 }
 
-export { ThemeProvider, useThemeContext } from "./context";
+module.exports = {
+  generateThemeMetadata,
+  getHTMLProps,
+  ThemeProvider,
+  useThemeContext,
+};
