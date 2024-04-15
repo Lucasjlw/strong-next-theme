@@ -20,4 +20,4 @@ export async function getHTMLProps() {
   };
 }
 
-export { useThemeContext } from "./context";
+export { ThemeProvider, useThemeContext } from "./context";
